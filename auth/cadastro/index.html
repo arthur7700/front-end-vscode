@@ -3,47 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Trabalho inicial </title>
+    <title>Trabalho inicial</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ===================================
+     PÁGINA DE CADASTRO
+==================================== -->
 <div class="cadastro-pagina">
+
+    <!-- === TOPO (logo + link para login) === -->
     <div class="cadastro-topo">
+
         <a href="../../index.html" class="logo">dev <span>Blog</span></a>
+        <!-- Logo clicável que leva à página inicial -->
+
         <a href="../login/index.html" class="cadastro-topo-link">
-        Já tenho conta <i class="fas fa-arrow-right"></i></a>
+            Já tenho conta <i class="fas fa-arrow-right"></i>
+        </a>
+        <!-- Link para quem já tem conta ir direto ao login -->
+
     </div>
+
+
+    <!-- === CORPO (card com formulário) === -->
     <div class="cadastro-corpo">
         <div class="cadastro-form-card">
+
             <h1 class="cadastro-titulo">Crie sua conta</h1>
+            <!-- Título principal da página -->
+
             <p class="cadastro-subtitulo">
-            Junte-se a centenas de devs que já escrevem no DevBlog
+                Junte-se a centenas de devs que já escrevem no DevBlog
             </p>
+            <!-- Subtítulo motivacional -->
+
+
+            <!-- === FORMULÁRIO === -->
             <form class="cadastro-form" action="#">
+            <!-- action="#" é placeholder — em produção apontaria para o servidor -->
+
+
+                <!-- Campos de Nome e Sobrenome lado a lado -->
                 <div class="campos-duplos">
+                <!-- Contêiner que posiciona os dois campos em linha (via CSS) -->
+
                     <div class="campo-grupo">
-                    <label class="campo-label" for="nome">nome</label>
-                    <input class="campo-input" type="text" id="nome" placeholder="João" required />
+                        <label class="campo-label" for="nome">Nome</label>
+                        <input class="campo-input" type="text" id="nome" placeholder="João" required />
+                        <!-- placeholder exibe texto de exemplo dentro do campo -->
+                        <!-- required impede o envio com o campo vazio -->
                     </div>
+
                     <div class="campo-grupo">
-                        <label class="campo-label" for="sobrenome">sobrenome</label>
+                        <label class="campo-label" for="sobrenome">Sobrenome</label>
                         <input class="campo-input" type="text" id="sobrenome" placeholder="Silva" required />
                     </div>
+
                 </div>
+
+
+                <!-- Campo de E-mail -->
                 <div class="campo-grupo">
                     <label class="campo-label" for="email">E-mail</label>
                     <input class="campo-input" type="email" id="email" placeholder="seu@gmail.com" required />
+                    <!-- type="email" valida o formato do e-mail automaticamente -->
                 </div>
+
+
+                <!-- Campo de Senha -->
                 <div class="campo-grupo">
-                    <label class="campo-label" type="senha">E-mail</label>
+                    <label class="campo-label" for="senha">Senha</label>
+                    
+                        <!-- e o texto dizia "E-mail" em vez de "Senha" -->
                     <input class="campo-input" type="password" id="senha" placeholder="Mínimo 8 caracteres" required />
+                    <!-- type="password" oculta os caracteres digitados -->
                 </div>
-                
+
+
+                <!-- Campo de Confirmar Senha -->
+                <div class="campo-grupo">
+                    <label class="campo-label" for="confirmar">Confirmar Senha</label>
+                    <input class="campo-input" type="password" id="confirmar" placeholder="Repita a senha" required />
+                </div>
+
+
+                <!-- Checkbox de aceite dos termos -->
+                <div class="cadastro-termos">
+                    <input class="checkbox" type="checkbox" id="termos" required />
+                  
+                    <label for="termos">
+                        Eu concordo com os <a href="#">Termos de uso</a> e a
+                        <a href="#">Política de Privacidade</a> do DevBlog
+                    </label>
+                </div>
+
+
+                <!-- Botão de envio -->
+                <button class="btn-primario cadastro-btn-submit" type="submit">
+                    Criar minha conta <i class="fas fa-user-plus"></i>
+                    <!-- Ícone de "adicionar usuário" da biblioteca Font Awesome -->
+                </button>
+
             </form>
+         
+                 <!-- (campo senha, botão "Entrar na conta" e link "Criar conta gratis")
+                 colado dentro do formulário de cadastro sem sentido -->
+
         </div>
     </div>
+
 </div>
+<!-- Fecha a cadastro-pagina -->
+
 
 </body>
 </html>
