@@ -1,283 +1,294 @@
+/* =============================================
+   VARIÁVEIS GLOBAIS
+   Definidas em :root para funcionar em qualquer
+   parte do CSS usando var(--nome-da-variavel)
+============================================= */
 :root{
-    --cor-fundo: #fafaf8;
-    --cor-escuro: #0f0f0f;
-    --cor-texto: #1a1a1a;
-    --cor-texto-suave: #555;
-    --cor-cinza: #888;
-    --cor-borda: #e8e8e4;
-    --cor-principal: #e85d26;
-    --cor-principal-hover: #cf4e1e;
-    --cor-principal-claro: #fde8dc;
-    --cor-sucesso: #22c55e;
-    --cor-erro: #ef4444;
-    --cor-aviso: #f59e0b;
+    /* --- Cores --- */
+    --cor-fundo: #fafaf8;           /* Branco levemente amarelado — fundo geral da página */
+    --cor-escuro: #0f0f0f;          /* Quase preto — usado no banner e fundos escuros */
+    --cor-texto: #1a1a1a;           /* Cor principal do texto */
+    --cor-texto-suave: #555;        /* Texto secundário, menos destaque */
+    --cor-cinza: #888;              /* Texto discreto: datas, meta, legendas */
+    --cor-borda: #e8e8e4;           /* Bordas e divisores sutis */
+    --cor-principal: #e85d26;       /* Laranja — cor de identidade do blog */
+    --cor-principal-hover: #cf4e1e; /* Laranja escuro — para hover de botões (declarada mas ainda não usada) */
+    --cor-principal-claro: #fde8dc; /* Laranja pastel — fundo dos badges */
+    --cor-sucesso: #22c55e;         /* Verde — para alertas de sucesso (declarada, ainda não usada) */
+    --cor-erro: #ef4444;            /* Vermelho — para erros (declarada, ainda não usada) */
+    --cor-aviso: #f59e0b;           /* Amarelo — para avisos (declarada, ainda não usada) */
 
-    /* fontes */
-
-     --fonte-titulo: serif;
-     --fonte-corpo: sans-serif;
+    /* --- Fontes --- */
+    --fonte-titulo: serif;       /* Serifada — visual editorial, usada em títulos */
+    --fonte-corpo: sans-serif;   /* Sem serifa — mais legível em tela, usada no texto geral */
 }
 
+
+/* =============================================
+   RESET BÁSICO
+   Zera os espaçamentos padrão que cada
+   navegador aplica de forma diferente
+============================================= */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;               /* Remove margens padrão de todos os elementos */
+    padding: 0;              /* Remove espaçamentos internos padrão */
+    box-sizing: border-box;  /* Padding e border são incluídos no tamanho total do elemento
+                                Ex: um div de 200px com padding 20px continua medindo 200px no total */
 }
 
+
+/* =============================================
+   ESTILOS GLOBAIS
+============================================= */
 body{
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo); /* Fundo bege claro em toda a página */
+    color: var(--cor-texto);            /* Cor de texto padrão para todos os elementos filhos */
+    line-height: 1.6;                   /* Altura de linha — melhora a leitura do texto corrido */
+    font-family: var(--fonte-corpo);    /* Fonte padrão da página */
 }
 
 ul{
-    list-style: none;
+    list-style: none; /* Remove as bolinhas/marcadores das listas */
 }
 
 a{
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: inherit;        /* Herda a cor do elemento pai (evita o azul padrão do navegador) */
 }
 
 
-
-/* cabeçalho Global */
- 
+/* =============================================
+   CABEÇALHO
+============================================= */
 .cabecalho{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 60px;
+    display: flex;                       /* Logo e nav ficam lado a lado */
+    align-items: center;                 /* Alinha ambos ao centro verticalmente */
+    justify-content: space-between;      /* Logo na esquerda, nav na direita */
+    padding: 20px 60px;                  /* 20px cima/baixo, 60px nas laterais */
     background-color: var(--cor-fundo);
-    border: 3px solid var(--cor-borda);
-    
+    border: 3px solid var(--cor-borda);  /* Borda ao redor do cabeçalho inteiro */
 }
 
 .logo{
     font-size: 26px;
     color: var(--cor-texto);
-    font-weight: 700;
-    font-family: var(--fonte-titulo);
+    font-weight: 700;                  /* Negrito */
+    font-family: var(--fonte-titulo);  /* Serifada — dá personalidade ao logo */
 }
 
 .logo span{
-    color: var(--cor-principal);
+    color: var(--cor-principal); /* Só "Blog" fica laranja, criando o efeito bicolor "Dev|Blog" */
 }
 
 .navbar{
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 32px; /* Espaço entre itens dentro da navbar (caso tenha botão extra além dos links) */
 }
 
-.nav-lista {
-    display: flex;
-    gap: 28px;
+.nav-lista{
+    display: flex;  /* Links do menu em linha horizontal */
+    gap: 28px;      /* Espaço entre cada link */
 }
 
 .nav-link{
     font-size: 15px;
     font-weight: 500;
-    color: var(--cor-texto-suave);
-    transition: all ease .5s;
+    color: var(--cor-texto-suave);  /* Cinza — menos destaque que o logo */
+    transition: all ease .5s;       /* Suaviza a mudança de cor no hover */
 }
 
-.nav-link:hover {
-    color: var(--cor-principal);
+.nav-link:hover{
+    color: var(--cor-principal); /* Link fica laranja ao passar o mouse */
 }
 
 
-/*-----------------------------------------*/
-        /*pagina artigo*/
-/*-----------------------------------------*/
-
-
-
-
+/* =============================================
+   BANNER DOS ARTIGOS
+============================================= */
 .artigos-banner{
-    background-color: var(--cor-escuro);
-    color: var(--cor-fundo);
-    padding: 80px 60px;
+    background-color: var(--cor-escuro);  /* Fundo preto */
+    color: var(--cor-fundo);             /* Texto claro sobre fundo escuro */
+    padding: 80px 60px;                  /* Espaçamento generoso — banner com "respiro" */
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;              /* Tag, título e subtítulo empilhados verticalmente */
+    gap: 16px;                           /* Espaço entre cada elemento */
+    position: relative;                  /* Permite posicionar a imagem decorativa com absolute */
+    overflow: hidden;                    /* Impede que a imagem decorativa vaze para fora */
 }
 
 .artigos-banner-tag{
     font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    color: var(--cor-principal);
+    letter-spacing: 2px;         /* Espaço entre letras — efeito elegante em textos pequenos */
+    text-transform: capitalize;  /* Primeira letra maiúscula */
+    color: var(--cor-principal); /* Laranja — chama atenção antes do título */
     font-weight: 500;
 }
 
-.artigos-banner-titulo {
-    font-family: var(--fonte-titulo);
-    font-size: 52px;
-    max-width: 600px;
-    line-height: 1.15;
+.artigos-banner-titulo{
+    font-family: var(--fonte-titulo); /* Serifada — visual de revista */
+    font-size: 52px;                  /* Grande e impactante */
+    max-width: 600px;                 /* Evita que o título se estique até a borda */
+    line-height: 1.15;                /* Linhas mais juntas em títulos grandes — padrão tipográfico */
 }
 
 .artigos-banner-sub{
     font-size: 16px;
-    color: var(--cor-cinza);
-    max-width: 480px;
-    line-height: 1.7;
+    color: var(--cor-cinza);  /* Cinza — hierarquia menor que o título */
+    max-width: 480px;         /* Largura controlada para conforto de leitura */
+    line-height: 1.7;         /* Mais espaçado que o título — parágrafos pedem mais respiro */
 }
 
 .banner-numero-fundo{
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: absolute;           /* Sai do fluxo normal — flutua sobre o conteúdo */
+    right: 40px;                  /* Ancorado à direita do banner */
+    top: 50%;                     /* Inicia no meio vertical do banner */
+    transform: translateY(-50%);  /* Sobe metade da própria altura — centraliza perfeitamente */
     font-family: var(--fonte-titulo);
-    font-size: 200px;
-    opacity: 0.3;
-    pointer-events: none;
-    user-select: none;
-   
+    font-size: 200px;             /* Enorme — é um elemento gráfico decorativo */
+    opacity: 0.2;                 /* Quase transparente para não atrapalhar o texto */
+    pointer-events: none;         /* Cliques do mouse passam por este elemento */
+    user-select: none;            /* Usuário não consegue selecionar/copiar esse texto */
 }
 
-/*-----------------------------------------*/
-        /*Controles*/
-/*-----------------------------------------*/
 
+/* =============================================
+   CONTROLES (BUSCA + FILTROS)
+============================================= */
 .artigo-controles{
     padding: 32px 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;               /* Busca em cima, filtros embaixo */
     gap: 20px;
-    border-bottom: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda); /* Linha divisória abaixo dos controles */
     background-color: var(--cor-fundo);
 }
 
 .busca-container{
-    position: relative;
+    position: relative; /* Permite posicionar o ícone da lupa dentro do campo */
     max-width: 480px;
 }
 
-.busca-icone {
-    position: absolute;
-    left: 16px;
+.busca-icone{
+    position: absolute;           /* Flutua dentro do .busca-container */
+    left: 16px;                   /* Cola à esquerda do input */
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%);  /* Centraliza o ícone verticalmente no input */
     font-size: 18px;
     color: var(--cor-cinza);
-    pointer-events: none;
+    pointer-events: none;         /* O ícone não bloqueia cliques no input */
 }
 
 .busca-input{
-    width: 100%;
-    padding: 12px 16px 12px 44px;
+    width: 100%;                       /* Ocupa toda a largura do .busca-container */
+    padding: 12px 16px 12px 44px;      /* 44px à esquerda deixa espaço para o ícone da lupa */
     border: 1.5px solid var(--cor-borda);
-    border-radius: 100px;
+    border-radius: 100px;              /* Formato de pílula */
     font-size: 14px;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    outline: none;
+    outline: none;                     /* Remove o contorno azul padrão do navegador */
 }
 
 .busca-input:focus{
-    border-color: var(--cor-principal);
-    box-shadow: 0 0 10px 3px var(--cor-principal);
+    border-color: var(--cor-principal);              /* Borda laranja quando o campo está ativo */
+    box-shadow: 0 0 10px 3px var(--cor-principal);   /* Brilho laranja ao redor — efeito "glow" */
 }
 
 .filtro-lista{
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 8px;         /* Pequeno espaço entre os botões */
+    flex-wrap: wrap;  /* Quebra para linha de baixo se não couberem na mesma linha */
 }
 
-.filtro-btn {
+.filtro-btn{
     padding: 7px 18px;
-    border-radius: 100px;
+    border-radius: 100px;                /* Formato de pílula */
     border: 1px solid var(--cor-borda);
     background-color: white;
     font-size: 13px;
     font-weight: 500;
     color: var(--cor-texto-suave);
-    cursor:pointer;
+    cursor: pointer;                     /* Cursor de mãozinha — indica que é clicável */
     transition: all .5s ease;
 }
 
-.filtro-btn:hover {
-    border-color: var(--cor-principal);
-    color: var(--cor-principal);
+.filtro-btn:hover{
+    border-color: var(--cor-principal);  /* Borda laranja no hover */
+    color: var(--cor-principal);         /* Texto laranja no hover */
 }
 
-.filtro-btn.ativo {
-    background-color: var(--cor-principal);
+.filtro-btn.ativo{
+    background-color: var(--cor-principal); /* Fundo laranja sólido — filtro selecionado */
     border-color: var(--cor-principal);
     color: white;
 }
 
-/* ---------------------------------
-        Container arquivos
------------------------------------*/
 
+/* =============================================
+   GRADE DE ARTIGOS
+============================================= */
 .artigos-grid-container{
     padding: 48px 60px;
 }
 
 .artigos-grid-titulo{
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-transform: uppercase;  /* "24 artigos publicados" em caixa alta */
+    letter-spacing: 2px;        /* Espaçamento elegante entre letras */
     color: var(--cor-cinza);
-    margin-bottom: 28px;
+    margin-bottom: 28px;        /* Espaço entre o contador e os cards abaixo */
 }
 
 .artigos-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    gap: 24px;                             /* Espaço entre os cards */
 }
 
-/*---------------------------------
-    Card de Artigo
------------------------------------*/
 
+/* =============================================
+   CARD DE ARTIGO
+============================================= */
 .artigo-card{
     background-color: white;
     border: 1px solid var(--cor-borda);
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 12px;     /* Cantos arredondados no card inteiro */
+    overflow: hidden;        /* A imagem não vaza além do border-radius */
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  /* Imagem em cima, conteúdo embaixo */
     transition: all .5s ease;
 }
 
 .artigo-card:hover{
-    box-shadow: 2px 2px 10px 2px rgba(0,0,0, 0.3);
-    transform: translateY(-5px);
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.3); /* Sombra — efeito de "elevação" */
+    transform: translateY(-5px);                   /* Card sobe 5px ao passar o mouse */
 }
+
 .artigo-card-imagem{
-    height: 180px;
-    background-color: var(--cor-escuro);
-    overflow: hidden;
+    height: 180px;                       /* Altura fixa — todas as imagens ficam iguais */
+    background-color: var(--cor-escuro); /* Fallback escuro enquanto a imagem carrega */
+    overflow: hidden;                    /* Necessário para o zoom não vazar do card */
     position: relative;
 }
 
 .artigo-card-imagem img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;     /* Cobre toda a área sem distorcer — corta o excesso */
     transition: all .5s ease;
 }
 
 .artigo-card:hover .artigo-card-imagem img{
-    transform: scale(1.05);
+    transform: scale(1.05); /* Zoom suave na imagem ao passar o mouse no card */
 }
 
 .artigo-card-corpo{
     padding: 24px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Badge, título, texto e rodapé empilhados */
     gap: 10px;
-    flex: 1;
+    flex: 1;                /* Ocupa o espaço restante — empurra o rodapé para baixo */
 }
 
 .artigo-card-titulo{
@@ -289,65 +300,65 @@ a{
 }
 
 .artigo-card:hover .artigo-card-titulo{
-    color: var(--cor-principal);
+    color: var(--cor-principal); /* Título fica laranja ao passar o mouse no card */
 }
 
 .artigo-card-texto{
     font-size: 14px;
     line-height: 1.7;
     color: var(--cor-texto-suave);
-    flex: 1;
+    flex: 1; /* Cresce para preencher o espaço disponível — empurra o rodapé para o fim */
 }
 
 .artigo-card-rodape{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;      /* Meta à esquerda, link à direita */
     margin-top: 8px;
     padding-top: 16px;
-    border-top: 1px solid var(--cor-borda);
+    border-top: 1px solid var(--cor-borda); /* Linha divisória acima do rodapé */
 }
-
 
 .artigo-card-meta{
     font-size: 12px;
-    color: var(--cor-cinza);
+    color: var(--cor-cinza); /* Data e tempo de leitura em cinza discreto */
 }
 
 .artigo-card-link{
     font-size: 13px;
     font-weight: 500;
-    color: var(--cor-principal);
+    color: var(--cor-principal); /* "Ler artigo →" em laranja */
 }
 
-/*---------------------------
-    Clamp de Texto
------------------------------*/
 
+/* =============================================
+   UTILITÁRIO: LIMITE DE LINHAS
+   Corta o texto em exatamente 3 linhas,
+   adicionando "..." no final automaticamente
+============================================= */
 .texto-3-linhas{
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: -webkit-box;          /* Ativa o modelo de caixa necessário para o clamp */
+    -webkit-line-clamp: 3;         /* Limita a exibição a 3 linhas */
+    -webkit-box-orient: vertical;  /* Define orientação vertical (obrigatório para funcionar) */
+    overflow: hidden;              /* Esconde o texto além das 3 linhas */
 }
 
-/*------------------------
-        Badges
----------------------------*/
 
+/* =============================================
+   BADGES (ETIQUETAS DE CATEGORIA)
+============================================= */
 .badge{
-    display: inline-block;
+    display: inline-block;    /* Ocupa só o espaço do conteúdo, mas aceita padding */
     padding: 4px 12px;
-    border-radius: 100px;
+    border-radius: 100px;     /* Formato de pílula */
     font-size: 11px;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    width: fit-content;
+    text-transform: uppercase; /* Texto sempre em caixa alta: "HTML", "CSS" */
+    letter-spacing: 1px;       /* Espaçamento sutil entre letras */
+    width: fit-content;        /* Largura se ajusta ao conteúdo — não ocupa linha inteira */
 }
 
 .badge-laranja{
-    background-color: var(--cor-principal-claro);
-    color: var(--cor-principal );
+    background-color: var(--cor-principal-claro); /* Fundo laranja bem clarinho */
+    color: var(--cor-principal);                  /* Texto laranja escuro — contraste legível */
 }
-

@@ -1,87 +1,166 @@
 <!DOCTYPE html>
+<!-- Define o tipo do documento como HTML5 -->
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Trabalho inicial </title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- Elemento raiz da página; lang="pt-br" informa ao navegador que o idioma é português brasileiro -->
 
-<header class="cabecalho"> 
- <a href="#"class="logo">Dev<span>Blog<span></a>
+<head>
+    <!-- Seção de metadados — não aparece visualmente na página -->
+
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, permitindo acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Torna a página responsiva: ajusta a largura ao tamanho da tela do dispositivo -->
+
+    <title>Trabalho inicial</title>
+    <!-- Texto que aparece na aba do navegador -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Conecta o arquivo de estilos externo "style.css" à página -->
+</head>
+
+<body>
+<!-- Tudo que está aqui dentro é exibido na tela para o usuário -->
+
+<!-- ===== CABEÇALHO ===== -->
+<header class="cabecalho">
+<!-- Elemento semântico de cabeçalho; class="cabecalho" permite estilizar via CSS -->
+
+    <a href="#" class="logo">Dev<span>Blog</span></a>
+    <!-- Link clicável com o nome do blog; <span> envolve "Blog" para poder colorir só essa palavra
+         ⚠️ ATENÇÃO: no original há um bug — <span> foi fechado duas vezes (</span></span>) -->
+
     <nav class="navbar">
+    <!-- Elemento semântico de navegação -->
+
         <ul class="nav-lista">
+        <!-- Lista não ordenada que agrupa os itens do menu -->
+
             <li><a href="#" class="nav-link">Inicio</a></li>
             <li><a href="#" class="nav-link">Artigo</a></li>
             <li><a href="#" class="nav-link">Sobre</a></li>
             <li><a href="#" class="nav-link">Contato</a></li>
+            <!-- Cada <li> é um item do menu; <a href="#"> é o link (# é um placeholder sem destino real) -->
         </ul>
     </nav>
 </header>
 
-<main> 
+<!-- ===== CONTEÚDO PRINCIPAL ===== -->
+<main>
+<!-- Elemento semântico que delimita o conteúdo central da página -->
 
+    <!-- === BANNER DE TOPO === -->
     <section class="artigos-banner">
-        <span class="artigos-banner-tag">Todos os artigos </span>
-        <h1 class="artigos-banner-titulo"> Conteúdo para<br>devs que evoluem
-        </h1>
-            <p class="artigo-banner-sub">
-                HTML,CSS,Javascript e muito mais, escrito por quem está ma prática, e para quem está começando
-            </p>
-            <div class="banner-numero-fundo">  <img src="siteInicial.png"></div>
-          
+    <!-- Seção visual de destaque no topo da área de artigos -->
+
+        <span class="artigos-banner-tag">Todos os artigos</span>
+        <!-- Pequena etiqueta/label acima do título -->
+
+        <h1 class="artigos-banner-titulo">Conteúdo para<br>devs que evoluem</h1>
+        <!-- Título principal da página; <br> força uma quebra de linha no meio do texto -->
+
+        <p class="artigo-banner-sub">
+            HTML, CSS, Javascript e muito mais, escrito por quem está na prática, e para quem está começando
+        </p>
+        <!-- Parágrafo de subtítulo/descrição do blog -->
+
+        <div class="banner-numero-fundo">
+            <img src="htmlImagem.png">
+            <!-- Imagem decorativa de fundo do banner (arquivo local) -->
+        </div>
     </section>
 
-<div class="artigo-controles">
-    <div class="busca-container">
-        <span class="busca-icone">
-        🔎
-        </span>
-        <input class="busca-input" type="text" 
-        placeholder="buscar artigos...">
-            
-    </div>
-    <div class="filtro-lista">
-        <button class="filtro-btn ativo">Todos</button>
-        <button class="filtro-btn">HTML</button>
-        <button class="filtro-btn">CSS</button>
-        <button class="filtro-btn">JavaScript</button>
-        <button class="filtro-btn">Carreira</button>
-        <button class="filtro-btn">Projeto</button>
-        <button class="filtro-btn">Dicas</button>
-    </div>
-</div>
+    <!-- === BARRA DE BUSCA E FILTROS === -->
+    <div class="artigo-controles">
+    <!-- Contêiner que agrupa os controles de busca e filtragem -->
 
-<section class="artigos-grid-container">
-<p class="artigos-grid-titulo">24 artigos publicados</p>
+        <div class="busca-container">
+        <!-- Contêiner específico da barra de pesquisa -->
 
-<div class="artigos-grid">
-    <article class="artigo-card destaque">
-    <div class="artigos-card-imagem">
-        <img src="https://tse2.mm.bing.net/th/id/OIP.dKEfzl6bh-jGXBz_jLbR4QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
-    </div>
-    <div class="artigos-card-corpo">
-        <span class="badge badge-laranja"><i class="fab fa-html5"></i>HTML</span>
-        <h2 class="artigo-card-titulo">O que é o HTML e por que ele é a base de tudo na web?</h2>
-        <p class="artigo-card-texto texto-3-linhas">
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam nemo enim assumenda? Mollitia temporibus blanditiis, officiis quidem
-        ab et fuga aliquid rerum quia ipsum aliquam debitis, est officia odit! Nostrum.
-        </p>
-        <div class="artigo-card-rodape">
-            <span class="artigo-card-meta"><i class="far fa-calendar"></i>25 mai. 2026 •
-                <i class="far fa-clock"></i>4 min </span>
-                <a href="#" class="artigo-card-link">Ler artigo <i class="fas fa-arrow-right"></i></a>
+            <span class="busca-icone">🔎</span>
+            <!-- Ícone de lupa exibido ao lado do campo de busca -->
+
+            <input class="busca-input" type="text" placeholder="buscar artigos...">
+            <!-- Campo de texto onde o usuário digita a pesquisa;
+                 placeholder é o texto cinza exibido quando o campo está vazio -->
+        </div>
+
+        <div class="filtro-lista">
+        <!-- Contêiner dos botões de filtro por categoria -->
+
+            <button class="filtro-btn ativo">Todos</button>
+            <!-- Botão ativo por padrão (classe "ativo" provavelmente o destaca via CSS) -->
+            <button class="filtro-btn">HTML</button>
+            <button class="filtro-btn">CSS</button>
+            <button class="filtro-btn">JavaScript</button>
+            <button class="filtro-btn">Carreira</button>
+            <button class="filtro-btn">Projeto</button>
+            <button class="filtro-btn">Dicas</button>
+            <!-- Demais filtros de categoria, sem a classe "ativo" -->
         </div>
     </div>
-    </article>
 
-</div>
-</section>
+    <!-- === GRADE DE ARTIGOS === -->
+    <section class="artigos-grid-container">
+    <!-- Seção que contém toda a listagem de artigos -->
+
+        <p class="artigos-grid-titulo">24 artigos publicados</p>
+        <!-- Contador de artigos exibido acima da grade -->
+
+        <div class="artigos-grid">
+        <!-- Contêiner da grade (provavelmente usa CSS Grid ou Flexbox para organizar os cards) -->
+
+            <!-- === CARD DE ARTIGO === -->
+            <article class="artigo-card destaque">
+            <!-- Elemento semântico para um artigo; "destaque" pode aplicar estilo especial (ex: card maior) -->
+
+                <div class="artigos-card-imagem">
+                    <img src="https://..." alt="">
+                    <!-- Imagem de capa do artigo; alt="" deveria ter uma descrição para acessibilidade -->
+                </div>
+
+                <div class="artigos-card-corpo">
+                <!-- Área de texto do card -->
+
+                    <span class="badge badge-laranja">
+                        <i class="fab fa-html5"></i>HTML
+                    </span>
+                    <!-- Badge/etiqueta de categoria; <i> usa Font Awesome para exibir o ícone do HTML5
+                         ⚠️ Para funcionar, Font Awesome precisa estar importado no <head> -->
+
+                    <h2 class="artigo-card-titulo">O que é o HTML e por que ele é a base de tudo na web?</h2>
+                    <!-- Título do artigo dentro do card -->
+
+                    <p class="artigo-card-texto texto-3-linhas">
+                        Lorem ipsum dolor sit amet...
+                    </p>
+                    <!-- Prévia do texto do artigo; "texto-3-linhas" provavelmente limita a exibição via CSS -->
+
+                    <div class="artigo-card-rodape">
+                    <!-- Rodapé do card com metadados e link -->
+
+                        <span class="artigo-card-meta">
+                            <i class="far fa-calendar"></i>25 mai. 2026 •
+                            <i class="far fa-clock"></i>4 min
+                        </span>
+                        <!-- Data de publicação e tempo estimado de leitura, com ícones Font Awesome -->
+
+                        <a href="#" class="artigo-card-link">
+                            Ler artigo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <!-- Link para abrir o artigo completo, com ícone de seta -->
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
 
 </main>
 
-<footer> </footer>
+<!-- ===== RODAPÉ ===== -->
+<footer></footer>
+<!-- Elemento semântico de rodapé — ainda está vazio, sem conteúdo -->
 
 </body>
 </html>
