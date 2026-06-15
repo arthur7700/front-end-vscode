@@ -1,157 +1,130 @@
 <!DOCTYPE html>
-<!-- Define o documento como HTML5 -->
-
 <html lang="pt-br">
-<!-- Elemento raiz; idioma definido como português brasileiro -->
-
 <head>
     <meta charset="UTF-8">
-    <!-- Permite acentos e caracteres especiais -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Torna a página responsiva em dispositivos móveis -->
-
-    <title>Trabalho inicial</title>
-    <!-- Texto exibido na aba do navegador -->
-
+    <title>Aula 1</title>
+    <!-- Folha de estilo específica desta página -->
     <link rel="stylesheet" href="style.css">
-    <!-- Importa o arquivo de estilos externo -->
-
+    <!-- Folha de estilo global do projeto -->
+    <link rel="stylesheet" href="../../style.css">
 </head>
-
 <body>
 
-<!-- ===================================
-     CABEÇALHO
-==================================== -->
-<header class="cabecalho">
+    <!-- =============================================
+         BLOCO COMENTADO - Exemplos de tags HTML
+         (mantido para referência de estudo)
+    ================================================
+    <h1>Olá Mundo!</h1>
+    <h2>Olá Mundo!</h2>
+    <h3>Olá Mundo!</h3>
+    <h4>Olá Mundo!</h4>
+    <h5>Olá Mundo!</h5>
+    <h6>Olá Mundo!</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque similique aspernatur dicta pariatur, in, nisi dolorem minus labore molestiae, aliquid cum. Ex atque quisquam, optio aut quasi rerum exercitationem ad.</p>
+    <span>Texto pequeno</span>
+    -->
 
-    <a href="#" class="logo">Dev<span>Blog</span></a>
-    <!-- Logo do blog; "Blog" dentro do <span> recebe cor laranja via CSS -->
+    <!-- Container principal que envolve toda a página de login -->
+    <div class="login-pagina">
 
-    <nav class="navbar">
-    <!-- Elemento semântico de navegação -->
+        <!-- ========== PAINEL ESQUERDO ========== -->
+        <!-- Painel decorativo/informativo com fundo de pontos -->
+        <div class="login-painel-esquerdo fundo-pontos">
 
-        <ul class="nav-lista">
-        <!-- Lista com os links do menu -->
+            <!-- Logo do site com link para a página inicial -->
+            <a href="../../index.html" class="logo">Dev <span>Blog</span></a>
+            <div>
 
-            <li><a href="#" class="nav-link">Inicio</a></li>
-            <li><a href="#" class="nav-link">Artigo</a></li>
-            <li><a href="#" class="nav-link">Sobre</a></li>
-            <li><a href="#" class="nav-link">Contato</a></li>
-            <!-- Cada <li> é um item do menu -->
-        </ul>
-    </nav>
-</header>
-
-
-<!-- ===================================
-     PÁGINA DE LOGIN
-     Dividida em dois painéis:
-     esquerdo (branding) e direito (formulário)
-==================================== -->
-<div class="login-pagina">
-
-
-    <!-- === PAINEL ESQUERDO (decorativo) === -->
-    <div class="login-painel-esquerdo fundo-pontos">
-    <!-- "fundo-pontos" aplica um padrão decorativo via CSS -->
-    
-
-        <div class="linha-acento"></div>
-        <!-- Elemento decorativo — linha colorida horizontal -->
-
-        <h2 class="login-frase">
-            escreva.<br>
-            Publique.<br>
-            <span>Inspire.</span>
-            <!-- Frase de impacto em três linhas -->
-            <!-- "Inspire." recebe destaque de cor via CSS -->
-        </h2>
-
-        <p class="login-rodape-painel">
-            Plataforma de blog para desenvolvedores • 2026
-            <!-- Texto de rodapé do painel esquerdo -->
-        </p>
-
-    </div>
-    <!-- Fecha o painel esquerdo -->
-
-
-    <!-- === PAINEL DIREITO (formulário de login) === -->
-    <div class="login-painel-direito">
-
-        <div class="login-form-card card-brilho">
-        <!-- Card que contém o formulário -->
-        <!-- "card-brilho" aplica sombra ou borda luminosa via CSS -->
-
-            <h1 class="login-titulo">Bem-vindo de volta</h1>
-            <!-- Título principal do formulário -->
-
-            <p class="login-subtitulo">Entre com sua conta para continuar</p>
-            <!-- Subtítulo explicativo -->
-
-
-            <!-- === FORMULÁRIO === -->
-            <form class="login-form" action="#">
-            <!-- action="#" é placeholder — em produção apontaria para o servidor -->
-
-
-                <!-- Campo de E-mail -->
-                <div class="campo-grupo">
-                <!-- Agrupa label + input para facilitar a estilização -->
-
-                    <label class="campo-label" for="email">E-mail</label>
-                    <!-- "for="email"" conecta o label ao input com id="email"
-                         clicar no label já foca o campo automaticamente -->
-
-                    <input class="campo-input" type="email" id="email" name="email" required />
-                    <!-- type="email" valida o formato automaticamente -->
-                    <!-- required impede o envio com o campo vazio -->
-                </div>
-
-
-                <!-- Campo de Senha -->
-                <div class="campo-grupo">
-
-                    <label class="campo-label" for="senha">Senha</label>
-
-                    <input class="campo-input" type="password" id="senha" name="senha" required />
-                    <!-- type="password" oculta os caracteres digitados -->
-                    <!-- required impede o envio com o campo vazio -->
-
-                    <a href="#" class="login-esqueceu">Esqueceu a senha?</a>
-                    <!-- Link para recuperação de senha -->
-                </div>
-
-
-                <!-- Botão de envio -->
-                <button class="btn-primario login-btn-submit" type="submit">
-                    Entrar na conta <i class="fas fa-sign-in-alt"></i>
-                    <!-- Ícone de "entrar" da biblioteca Font Awesome -->
-                </button>
-
-            </form>
-
-
-            <!-- Link para criar conta -->
-            <p class="login-cadastro-link">
-                Ainda não tem conta? <a href="../cadastro/cadastro.html">Criar conta gratis</a>
-                <!-- Redireciona para a página de cadastro -->
+                <!-- Elemento decorativo de linhas de acento -->
+                <div class="linhas-acento"></div>
+                
+                <!-- Frase de impacto do produto, exibida em três linhas -->
+                <h2 class="login-frase">
+                    escreva.<br>
+                    publique.<br>
+                    <span>inspire.</span> <!-- Palavra de destaque em cor diferente via CSS -->
+                </h2>
+            </div>
+                
+            <!-- Rodapé do painel esquerdo com descrição e ano -->
+            <p class="login-rodape-painel">
+                Plataforma de blog para desenvolvedores • 2026
             </p>
 
         </div>
+        <!-- FIM DO PAINEL ESQUERDO -->
+
+        <!-- ========== PAINEL DIREITO ========== -->
+        <!-- Painel que contém o formulário de login -->
+        <div class="login-painel-direito">
+
+            <!-- Card do formulário com efeito de brilho -->
+            <div class="login-form-card card-brilho">
+
+                <!-- Título principal do card de login -->
+                <h1 class="login-titulo">Bem-vindo de volta</h1>
+
+                <!-- Subtítulo orientando o usuário -->
+                <p class="login-subtitulo">Entre com sua conta para continuar</p>
+
+                <!-- Formulário de login (action="#" mantém na mesma página por enquanto) -->
+                <form class="login-form" action="#">
+
+                    <!-- Campo de e-mail -->
+                    <div class="campo-grupo">
+                        <!-- Label associada ao input pelo atributo "for" = "id" do input -->
+                        <label class="campo-label" for="email">E-mail</label>
+                        <input
+                            class="campo-input"
+                            type="email"        
+                            id="email"
+                            placeholder="SeuEmail@gmail.com"
+                            name="email"
+                            required            
+                        />
+                    </div>
+
+                    <!-- Campo de senha -->
+                    <div class="campo-grupo">
+                        <label class="campo-label" for="senha">Senha</label>
+                        <input
+                            class="campo-input"
+                            type="password"    
+                            id="senha"
+                            name="senha"
+                            placeholder="Senha"
+                            required            
+                        />
+                        <!-- Link para recuperação de senha -->
+                        <a href="#" class="login-esqueceu">Esqueceu a senha?</a>
+                    </div>
+
+                    <!-- Botão de envio do formulário -->
+                    <!-- Typo original mantido: "Esntrar" e classe "btn-primeario" -->
+                    <button class="btn-primario login-btn-submit" type="submit">
+                        Entrar na conta
+                        <!-- Ícone do Font Awesome (requer a lib FA carregada no CSS global) -->
+                        <i class="fas fa-sing-in-alt"></i>
+                    </button>
+
+                </form>
+                <!-- FIM DO FORMULÁRIO -->
+
+                <!-- Link para a página de cadastro, exibido abaixo do formulário -->
+                <p class="login-cadastro-link">
+                    Ainda não tem conta?
+                    <a href="../cadastro/cadastro.html">Criar conta grátis</a>
+                </p>
+
+            </div>
+            <!-- FIM DO CARD DO FORMULÁRIO -->
+
+        </div>
+        <!-- FIM DO PAINEL DIREITO -->
+
     </div>
-
-</div>
-<!-- Fecha o login-pagina, englobando os dois painéis -->
-
-
-<!-- ===================================
-     RODAPÉ
-==================================== -->
-<footer></footer>
-<!-- Rodapé presente mas ainda sem conteúdo -->
+    <!-- FIM DO CONTAINER PRINCIPAL (.login-pagina) -->
 
 </body>
 </html>

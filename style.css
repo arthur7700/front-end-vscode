@@ -362,3 +362,88 @@ a{
     background-color: var(--cor-principal-claro); /* Fundo laranja bem clarinho */
     color: var(--cor-principal);                  /* Texto laranja escuro — contraste legível */
 }
+
+/*======================================
+        Botões
+=======================================*/
+
+.btn-primario{
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
+    background-color: var(--cor-principal);
+    color: #fff;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn-primario:hover{
+    background-color: var(--cor-principal-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secundario{
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: var(--cor-texto);
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1.5px solid var(--cor-borda);
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn-secundario:hover{
+    border-color: var(--cor-principal);
+    color: var(--cor-principal);
+    transform: translateY(-2px);
+}
+
+/*=============================================
+        Campos Formulario
+=============================================*/
+
+.campo-grupo{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-lable{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cor-texto-suave);
+    letter-spacing: 0.3px;
+}
+
+.campo-input{
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--cor-texto);
+    background-color: white;
+    transition: all .5s ease;
+    outline: none;
+}
+
+.campo-input:focus{
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(232,93,38,0.3);
+}
+
+.campo-input::placeholder{
+    color: #bbb;
+}
